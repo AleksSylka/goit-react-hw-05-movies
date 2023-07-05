@@ -10,10 +10,7 @@ export const Cast = () => {
 
     
     useEffect(() => {
-        getObjInfoMovie();
-    }, [movieId])
-
-    const getObjInfoMovie = async () => {
+        const getObjInfoMovie = async () => {
         try {
             const {data: {cast}} = await getActorsById(movieId);
             setArrayCast(cast);
@@ -22,6 +19,10 @@ export const Cast = () => {
             toast(error);
         }
     }
+        getObjInfoMovie();
+    }, [movieId, error])
+
+    
     
     return (
         <>

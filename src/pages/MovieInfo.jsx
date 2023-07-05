@@ -21,10 +21,7 @@ const MovieInfo = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        getObjInfoMovie();
-    }, [movieId]);
-
-    const getObjInfoMovie = async () => {
+        const getObjInfoMovie = async () => {
         try {
             const {data} = await getMovieById(movieId);
             setObjInfoMovie(data);
@@ -35,8 +32,11 @@ const MovieInfo = () => {
             setIsLoading(false);
         }
     }
+        getObjInfoMovie();
+    }, [movieId, error]);
 
-    const GoBackLink = location?.state?.from ?? routesData.HOME
+    const GoBackLink = location?.state?.from ?? routesData.HOME;
+    
     return (
         <div>
             <BtnGoBack path={GoBackLink}>Go Back</BtnGoBack>

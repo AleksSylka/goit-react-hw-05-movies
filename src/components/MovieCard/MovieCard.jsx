@@ -1,13 +1,4 @@
-import { AddInfoMovieLink } from "components/AddInfoMovie/AddInfoMovie";
 import { MovieImg, MovieCardBox, ListGenres } from "./MovieCard.styled";
-import { Route, Routes } from "react-router-dom";
-import { Cast } from "components/Cast/Cast";
-import { Reviews } from "components/Reviews/Reviews";
-import { routesData } from "routes";
-import { Outlet } from "react-router-dom"
-
-const {MOVIES_ID} = routesData
-
 
 export const MovieCard = ({id, poster_path, title, overview, vote_average, genres = []}) => {
     

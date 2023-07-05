@@ -2,8 +2,6 @@ import { BiCameraMovie } from 'react-icons/bi';
 import { ListMovie, ItemMovie, ItemLink, TitleMovie } from './ListPopularMovie.styled';
 import { routesData } from 'routes';
 import { useLocation } from 'react-router-dom';
-import { Suspense } from "react";
-
 
 export const ListPopularMovie = ({ arrayPopularMovies }) => {
     const location = useLocation();
@@ -20,5 +18,4 @@ export const ListPopularMovie = ({ arrayPopularMovies }) => {
                     </ItemMovie>)
         }))}
     </ListMovie>)
-
 }

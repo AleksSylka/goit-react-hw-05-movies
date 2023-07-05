@@ -10,18 +10,19 @@ export const Reviews = () => {
 
     
     useEffect(() => {
-        getObjInfoMovie();
-    }, [movieId])
-
-    const getObjInfoMovie = async () => {
-        try {
-            const {data: {results}} = await getReviewsById(movieId);
-            setArrayReviews(results);
-        } catch (err) {
-            setError(err.message);
-            toast(error);
+        const getObjInfoMovie = async () => {
+            try {
+                const { data: { results } } = await getReviewsById(movieId);
+                setArrayReviews(results);
+            } catch (err) {
+                setError(err.message);
+                toast(error);
+            }
         }
-    }
+        getObjInfoMovie();
+    }, [movieId, error]);
+
+    
     
     return (<>
             <ul>

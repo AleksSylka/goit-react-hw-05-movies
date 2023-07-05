@@ -14,12 +14,7 @@ const HomePage = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        getArrayPopularMovies()
-    }, [])
-
-
-    
-    const getArrayPopularMovies = async () => {
+        const getArrayPopularMovies = async () => {
         try {
             const {data: {results}} = await getPopularMovies();
             setArrayPopularMovies(results)
@@ -30,6 +25,12 @@ const HomePage = () => {
             setIsLoading(false);
         }
     }
+        getArrayPopularMovies()
+    }, [error])
+
+
+    
+    
     
     return (
         <Container>

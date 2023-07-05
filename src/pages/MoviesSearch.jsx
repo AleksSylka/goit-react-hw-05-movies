@@ -18,7 +18,6 @@ const MoviesSearch = () => {
 
     const location = useLocation();
     
-
     useEffect(() => {
         const queryData = searchParams.get('query');
 
@@ -36,7 +35,7 @@ const MoviesSearch = () => {
             }
         }
         getObjInfoMovieByQuery();
-    }, [searchParams])
+    }, [searchParams, error])
     
     const handleChangeSearchParams = (query) => {
         setSearchParams({query});
