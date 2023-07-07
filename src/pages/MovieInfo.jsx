@@ -36,7 +36,7 @@ const MovieInfo = () => {
     }, [movieId, error]);
 
     const GoBackLink = location?.state?.from ?? routesData.HOME;
-    
+
     return (
         <div>
             <BtnGoBack path={GoBackLink}>Go Back</BtnGoBack>
@@ -58,7 +58,6 @@ const MovieInfo = () => {
                 genres={genres} />}
             
             <AddInfoMovieLink/>
-
             <Outlet/>
             <ToastContainer />
         </div>

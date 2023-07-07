@@ -28,10 +28,6 @@ const HomePage = () => {
         getArrayPopularMovies()
     }, [error])
 
-
-    
-    
-    
     return (
         <Container>
             <div>
