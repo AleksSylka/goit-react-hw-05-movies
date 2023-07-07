@@ -3,6 +3,6 @@ import { ButtonGoBack } from "./BtnGoBack.styled";
 
 export const BtnGoBack = ({path, children}) => {
     return (
-        <Link to={path}><ButtonGoBack >{children}</ButtonGoBack></Link>
+        <Link to={path}><ButtonGoBack>{children}</ButtonGoBack></Link>
         )
 }

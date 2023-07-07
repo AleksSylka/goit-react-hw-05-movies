@@ -16,7 +16,7 @@ const MovieInfo = () => {
     const [error, setError] = useState(null);
     const { movieId } = useParams();
     const location = useLocation();
-
+    console.log(location);
     const { poster_path, title, overview, vote_average, genres = [] } = objInfoMovie;
 
     useEffect(() => {

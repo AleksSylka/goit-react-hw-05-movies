@@ -2,12 +2,11 @@ import { Searchbar } from "components/Searchbar/Searchbar";
 import { getMoviesByQuery } from "service/serviceAPI";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
-import { useLocation, useSearchParams } from "react-router-dom";
-import { ItemLink, ItemMovie, ListMovie, TitleMovie } from "../components/ListPopularMovie/ListPopularMovie.styled";
-import { BiCameraMovie } from 'react-icons/bi';
-import { routesData } from "routes";
+import { useSearchParams } from "react-router-dom";
+import { ListMovie } from "../components/ListPopularMovie/ListPopularMovie.styled";
 import { TailSpin } from 'react-loader-spinner';
 import { Loader } from "components/MovieCard/MovieCard.styled";
+import { ItemLinkMovie } from "components/ItemLinkMovie/ItemLinkMovie";
 
 const MoviesSearch = () => {
 
@@ -15,8 +14,6 @@ const MoviesSearch = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
-
-    const location = useLocation();
     
     useEffect(() => {
         const queryData = searchParams.get('query');
@@ -56,13 +53,7 @@ const MoviesSearch = () => {
             </Loader>
             <ListMovie>
                 {arrMoviesByQuery.map(({title, id}) => {
-                    return (
-                        <ItemMovie key={id}>
-                            <ItemLink to={`${routesData.MOVIES}/${id}`} state={{from: location}}>
-                                <BiCameraMovie/><TitleMovie>{title}</TitleMovie>
-                            </ItemLink>
-                        </ItemMovie>
-                        )
+                    return (<ItemLinkMovie key={id} id={id} title={title} />)
                 })}
             </ListMovie>
             <ToastContainer />
